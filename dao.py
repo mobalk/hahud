@@ -51,10 +51,12 @@ def findChanges(dirpath, results: List[car]) -> List[car]:
             if oldres is not None:
                 oldcar = car(*oldres)
                 if oldcar != currentCar:
+                    diff = currentCar.diffFromOld(oldcar);
+                    changeStr = '' if diff == '<p></p>' else 'changed';
                     changes.append(
                         currentCar.with_change_reasons(
-                            'changed',
-                            currentCar.diffFromOld(oldcar),
+                            changeStr,
+                            diff,
                         )
                     )
             else:

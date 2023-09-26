@@ -8,7 +8,7 @@
 <body>
     {% for listing in changes %}
         <div class="container change m-4 border border-primary">
-            <div class="row px-1 item-header">
+	    <div class="row px-1 item-header {{ listing.reason }}">
                 <div class="col listing-reason">{{ listing.reason }}</div>
                 <div class="col-6 listing-title"><a href="{{ listing.url }}" target="_blank" rel="noref noopener">{{ listing.title }}</a></div>
                 <div class="col listing-price">{{ listing.price }}</div>

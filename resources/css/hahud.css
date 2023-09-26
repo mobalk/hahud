@@ -4,6 +4,15 @@
     margin: 1em auto;
 }
 
+.item-header.changed {
+    background-color: #a1c2d9;
+}
+.item-header.new {
+    background-color: #a1d9bc;
+}
+.item-header.deleted {
+    background-color: #d9a1a1;
+}
 .item-header {
     background-color: #c0c0c0;
 }
