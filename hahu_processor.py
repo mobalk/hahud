@@ -51,14 +51,14 @@ def fetch_results_from_query(query) -> List[car]:
                 img = "NotFound"
 
             img = loadToCache(img)
-            price = adatsor.find('.//div[@class="vetelar"]').text
+            price = adatsor.find('.//div[@class="pricefield-primary"]').text
             listing_id = listing.find(".//*[@data-hirkod]").get("data-hirkod")
             databoxes = info.findall(".//span")
             maybeData = list(map(lambda databox: databox.text, databoxes))
 
             if None in maybeData:
                 # km in tooltip?
-                km = info.find('.//abbr[@title="Kilométeróra állása"]')
+                km = info.find('.//abbr[@title="Km. óra állás"]')
                 if km is not None:
                     finalData = [x if x is not None else km.text for x in maybeData]
                 else:
