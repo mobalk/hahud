@@ -35,7 +35,7 @@ class ChangeSet:
         self.delta_path = file_path
         self.full_path = f'{file_path[:-5]}.full.html'
         self.link_text = epoch2timestamp(
-            float(file_path[file_path.find("data_") :].split("/")[-1][:-5])
+            float(file_path[file_path.find("data_") :].split("\\")[-1][:-5])
         )
 
 
