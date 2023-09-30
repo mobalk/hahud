@@ -24,7 +24,10 @@ for query in queries:
 
     print("done. ", end="")
     if changes:
-        print(str(len(changes)) + " change(s)")
+        print(str(len(changes)) + " item(s)")
+        print("  new: ", len([x for x in changes if x.reason == 'new']))
+        print("  changed: ", len([x for x in changes if x.reason == 'changed']))
+        print("  deleted: ", len([x for x in changes if x.reason == 'deleted']))
     else:
         print("")
 

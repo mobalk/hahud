@@ -21,6 +21,7 @@
                 {% for link in menu_item.htmls %}
                 <li>
                     <a href="{{ link.delta_path }}" target="main">{{ link.link_text }}</a>
+		    {{ link.diff_text }}
                     <a href="{{ link.full_path }}" target="main">Δ</a>
                 </li>
                 {% endfor %}
